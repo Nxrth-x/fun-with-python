@@ -24,6 +24,8 @@ def _(function, *args, **kwargs):
 first_function = _(lambda x, y, z = 5: x + y + z, 10, z=6) # Named arguments
 second_function = _(lambda x: x - 10) # Basic function without parameters
 third_function = lambda x: x * 2 # Same function as before but without the decoration
+fourth_function = lambda x: [i for i in range(x)]
+
 
 # Piping
 value = (
@@ -31,6 +33,8 @@ value = (
 	>> first_function
 	>> second_function
 	>> third_function
+	>> fourth_function
+	>> sum
 )
 
 print(value)
